@@ -78,6 +78,8 @@ namespace WordPrinter
 
                         // Increment progress bar
                         progressBar.Value++;
+                        int progress = (int)(((double)progressBar.Value / (double)progressBar.Maximum) * 100);
+                        lblProgress.Text = $"{progress}%";
                     }
                     catch (Exception ex)
                     {
@@ -118,7 +120,12 @@ namespace WordPrinter
 
         private void btnClearList_Click(object sender, EventArgs e)
         {
+            // 清空列表框
             lbFiles.Items.Clear();
+            // 清空进度条和进度百分比
+            progressBar.Value = 0;
+            lblProgress.Text = "";
+
         }
     }
 }
