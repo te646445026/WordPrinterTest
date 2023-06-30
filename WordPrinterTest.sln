@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33424.131
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33328.57
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordPrinter", "WordPrinter\WordPrinter.csproj", "{0CBA3294-E89F-4434-B6B7-931856BCCAAE}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WordPrinterSetup", "WordPrinterSetup\WordPrinterSetup.vdproj", "{1BC8B3FD-C135-48CD-916F-EA877B60976C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{0CBA3294-E89F-4434-B6B7-931856BCCAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CBA3294-E89F-4434-B6B7-931856BCCAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CBA3294-E89F-4434-B6B7-931856BCCAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC8B3FD-C135-48CD-916F-EA877B60976C}.Debug|Any CPU.ActiveCfg = Debug
+		{1BC8B3FD-C135-48CD-916F-EA877B60976C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

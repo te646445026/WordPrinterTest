@@ -14,6 +14,10 @@ namespace WordPrinter
         public Form1()
         {
             InitializeComponent();
+            // Enable drag and drop
+            this.AllowDrop = true;
+            this.DragEnter += new DragEventHandler(MainForm_DragEnter);
+            this.DragDrop += new DragEventHandler(MainForm_DragDrop);
         }
 
         private void btnSelectFiles_Click(object sender, EventArgs e)
@@ -119,6 +123,25 @@ namespace WordPrinter
         private void btnClearList_Click(object sender, EventArgs e)
         {
             lbFiles.Items.Clear();
+        }
+
+        private void MainForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void MainForm_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop);
+            _fileNames.AddRange(fileNames);
+            lbFiles.Items.Clear();
+            foreach (string fileName in _fileNames)
+            {
+                lbFiles.Items.Add(fileName);
+            }
         }
     }
 }
