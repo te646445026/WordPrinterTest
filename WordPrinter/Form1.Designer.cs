@@ -33,8 +33,19 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.lbFiles = new System.Windows.Forms.ListBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.lblProgress = new System.Windows.Forms.Label();
             btnClearList = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnClearList
+            // 
+            btnClearList.Location = new System.Drawing.Point(453, 259);
+            btnClearList.Name = "btnClearList";
+            btnClearList.Size = new System.Drawing.Size(102, 23);
+            btnClearList.TabIndex = 3;
+            btnClearList.Text = "btnClearList";
+            btnClearList.UseVisualStyleBackColor = true;
+            btnClearList.Click += new System.EventHandler(this.btnClearList_Click);
             // 
             // btnSelectFiles
             // 
@@ -65,16 +76,6 @@
             this.lbFiles.Size = new System.Drawing.Size(605, 136);
             this.lbFiles.TabIndex = 2;
             // 
-            // btnClearList
-            // 
-            btnClearList.Location = new System.Drawing.Point(453, 259);
-            btnClearList.Name = "btnClearList";
-            btnClearList.Size = new System.Drawing.Size(102, 23);
-            btnClearList.TabIndex = 3;
-            btnClearList.Text = "btnClearList";
-            btnClearList.UseVisualStyleBackColor = true;
-            btnClearList.Click += new System.EventHandler(this.btnClearList_Click);
-            // 
             // progressBar
             // 
             this.progressBar.Location = new System.Drawing.Point(82, 221);
@@ -82,11 +83,20 @@
             this.progressBar.Size = new System.Drawing.Size(604, 23);
             this.progressBar.TabIndex = 4;
             // 
+            // lblProgress
+            // 
+            this.lblProgress.AutoSize = true;
+            this.lblProgress.Location = new System.Drawing.Point(79, 247);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(0, 12);
+            this.lblProgress.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(btnClearList);
             this.Controls.Add(this.lbFiles);
@@ -95,6 +105,7 @@
             this.Name = "Form1";
             this.Text = "Word文档批量打印工具";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -104,6 +115,7 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.ListBox lbFiles;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Label lblProgress;
     }
 }
 
