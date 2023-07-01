@@ -134,10 +134,19 @@ namespace WordPrinter
 
         private void MainForm_DragEnter(object sender, DragEventArgs e)
         {
+            // 检查拖拽的文件是否为doc或docx文件
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                e.Effect = DragDropEffects.Copy;
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files.Length == 1 && (Path.GetExtension(files[0]).ToLower() == ".doc" || Path.GetExtension(files[0]).ToLower() == ".docx"))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                    return;
+                }
             }
+
+            // 不允许拖入其他类型文件
+            e.Effect = DragDropEffects.None;
         }
 
         private void MainForm_DragDrop(object sender, DragEventArgs e)
