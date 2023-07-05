@@ -129,6 +129,7 @@ namespace WordPrinter
             // 清空进度条和进度百分比
             progressBar.Value = 0;
             lblProgress.Text = "";
+            _fileNames.Clear();
 
         }
 
