@@ -52,8 +52,9 @@ namespace WordPrinter
                 // Initialize progress bar
                 progressBar.Maximum = _fileNames.Count;
                 progressBar.Value = 0;
-                foreach (string fileName in _fileNames)
+                for (int i = 0; i < _fileNames.Count; i++)
                 {
+                    string fileName = _fileNames[i];
                     try
                     {
                         Application wordApp = new Application();
@@ -84,6 +85,19 @@ namespace WordPrinter
                         progressBar.Value++;
                         int progress = (int)(((double)progressBar.Value / (double)progressBar.Maximum) * 100);
                         lblProgress.Text = $"{progress}%";
+                        // Get the file name without extension
+                        string name = Path.GetFileNameWithoutExtension(fileName);
+                        // Get the file extension
+                        string extension = Path.GetExtension(fileName);
+                        // **Copy the file with "-已打印" suffix and original extension**
+                        string newFileName = Path.GetDirectoryName(fileName)+ "\\"+name + "-已打印" + extension; 
+                        File.Copy(fileName, newFileName); 
+                        // **Delete the original file**
+                        File.Delete(fileName);
+                        _fileNames[i] = newFileName;
+
+                        // Update the file name in the list box
+                        lbFiles.Items[i] = newFileName;
                     }
                     catch (Exception ex)
                     {
