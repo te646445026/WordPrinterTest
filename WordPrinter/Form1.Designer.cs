@@ -75,6 +75,7 @@
             this.lbFiles.Name = "lbFiles";
             this.lbFiles.Size = new System.Drawing.Size(605, 136);
             this.lbFiles.TabIndex = 2;
+            this.lbFiles.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
             // 
             // progressBar
             // 
